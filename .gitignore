@@ -13,7 +13,7 @@ Claralara.code-workspace
 *.db
 *.png
 *.jpg
-*.txt
+claralara_*.txt
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

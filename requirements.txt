@@ -1,0 +1,7 @@
+aiomysql 
+aiosqlite
+discord-ext-bot
+python-dotenv
+mysql-connector-python
+py-cord
+ezcord
