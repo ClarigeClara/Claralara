@@ -17,7 +17,7 @@ Clientname = "Claralara"
 # 1.1 - Versionsangabe
 
 # Preview-Version
-previewversion = 16
+previewversion = 1
 
 # Beta-Version
 Betaversion = 1
