@@ -8,12 +8,13 @@ cspell.json
 Claralara.code-workspace
 
 # Dateien ausblenden
-*.env
+.env
 *.git
 *.db
 *.png
 *.jpg
 claralara_*.txt
+commit.txt
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

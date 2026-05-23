@@ -1,64 +1,68 @@
 # WILLKOMMEN BEI DER CLARALARA-CONFIG
 # Die Software muss neu gestartet werden, damit Änderungen wirksam werden.
+# The Software needs to be restarted for changes to take effect.
 # © 2022 - 2026 | @clarigeclara | config 
+
 import datetime
 import discord
+from discord.ui import Button
 import aiomysql
 import os
 from dotenv import load_dotenv
 
 load_dotenv()
 
-# 1 - Bot-Identität
+# 1 - Bot-Identität / Bot Identity
 
-# Wie heißt der Bot?
+# Wie heißt der Bot? / What is the name of the bot?
 Clientname = "Claralara"
 
-# 1.1 - Versionsangabe
+# 1.1 - Versionsangabe / Version information
 
 # Preview-Version
-previewversion = 1
+previewversion = 2
 
 # Beta-Version
 Betaversion = 1
 
-# Versionstypen
+# Versionstypen / Types of versions
 Majorversion = 7
 Minorversion = 0
 Patchversion = 0
+Minorversionnummer = 24
 Updatenummer = 93
-Buildnummer = f"24{Patchversion}{Updatenummer}"
+Buildnummer = f"{Minorversionnummer}{Patchversion}{Updatenummer}"
 
 # 1.2 - Zeitangabe für das Update /claralara info:
-# Jahr z.B. 2022:
-Buildjahr = "2026"
-# Monat z.B. 03:
-Buildmonat = "05"
-# Tag z.B. 10
-Buildtag = "13"
-# Stunde z.B. 02
-Buildstunde = "22"
-# Minute z.B. 37
-Buildminute = "16"
+# 1.2 - Time information for the update /claralara info:
+# Jahr / Year  e.g. 2022:
+Buildyear = "2026"
+# Monat / Month  e.g. 03:
+Buildmonth = "05"
+# Tag / Day  e.g. 10
+Buildday = "23"
+# Stunde / Hour  e.g. 02
+Buildhour = "22"
+# Minute / Minute  e.g. 37
+Buildminute = "23"
 
-# 1.3 - Botmodus-Einstellungen
+# 1.3 - Botmodus-Einstellungen / Botmode settings
 # 0 | Stable-Release
 # 1 | Beta-Release
-# 2 | Preview-Release (Entwicklermodus)
+# 2 | Preview-Release (Entwicklermodus / developer mode) 
 Botmodus = 2
 
-# 1.4 - Anzahl angaben:
-Befehle = 33
-Eastereggs = 32
-Witzen = 701
-Spiele = 0
-Language = "deutsch"
+# 1.4 - Anzahl & Sprache angeben / Count information and Languages
+App_Commands = 33
+App_Eastereggs = 32
+App_Languages = "deutsch, english"
 
 # 1.5 - Claralara Links
 Botseite = "https://claralara.de/"
-bot_einladen_url = "https://claralara.de/invite"
+bot_invite_url = "https://claralara.de/invite"
 supportserver = "https://claralara.de/discord"
-Claralara_Copyright = f"©2022-{Buildjahr} - @clarigeclara @muninotowo"
+github_repo_url = "https://github.com/ClarigeClara/Claralara"
+Claralara_Copyright = f"©2022-{Buildyear} - @clarigeclara"
 
 # 1.6 - Formatedate_format = "%d.%m.%Y, um %H:%M Uhr."
 botinfo_date_format = "%d.%m.%Y - %H:%M"
@@ -66,15 +70,15 @@ konsole_date_format = "%d.%m.%Y - %H:%M:%S"
 logdataformat = datetime.datetime.now().strftime("%Y.%m.%d")
 Startzeit = datetime.datetime.now()
 
-# 1.7 - Kanälen
-adminchat = 1141789751951765695
-feedback_channel = 1109423978965110817
-bugreport_channel = 1109423978965110816
-userreport_channel = 1197096013006127104
-serverreport_channel = 1197096272818077726
-suggestion_channel = 1109423978965110815
+# 1.7 - Kanälen / Channels
+adminchat = 1507710163996512296
+feedback_channel = 1507710163996512296
+bugreport_channel = 1507710323514282004
+userreport_channel = 1507710323514282004
+serverreport_channel = 1507710323514282004
+suggestion_channel = 1507710477059231927
 
-# 3.8 Emotes (Zentral)
+# 3.8 Emotes (Centralized Emotes for all Cogs)
 Error_emote = "<a:Capoo_Work:964760657251684352>"
 Support_icon = "<:Emotional_Damage:939113435688493087>"
 hinweis_emote = "<:fucking_ring_ring_ring:974961199995318374>"
@@ -88,7 +92,7 @@ adminhilfe_emote = "<:MK_Blueshell:939106975847940127>"
 Ofenkartoffeln = "<:WG2_Baked_Potato:1071230093868937246>"
 
 
-# 2.1 - Speichervorgangstexte
+# Wird in ymal ersetzt.
 Speichervorgangtext = ["ehmmm warte kurz, bitte...",
                        "Ich merkel mir das schnell...",
                        "Uh okay, warte kurz...",
@@ -141,7 +145,8 @@ wusstest_du_Schon = ["Alexander der Große war klein: gerade mal 1,50 Meter gro�
 
 
 # 2.3 - Emotes mit Spruch
-Error_title = "<:Emotional_Damage:939113435688493087> Ein Fehler ist aufgetreten!"
+Error_title_DE = "<:Emotional_Damage:939113435688493087> Ein Fehler ist aufgetreten!"
+Error_title_EN = "<:Emotional_Damage:939113435688493087> An error has occurred!"
 
 
 # 6.0.0 Memes und Gifsammlung:
@@ -191,48 +196,60 @@ Gone = ["https://media1.tenor.com/m/z0X6U7McZPcAAAAd/bye-im-out.gif",
 
 OHHHH = ["https://media1.tenor.com/m/EfSi6uDyZ9UAAAAC/terminalmontage-star-fox.gif"]
 
+# 7.0 | Supportlinks
+doku = Button(disabled=True, label="Dokumentation", 
+                     url=Botseite,
+              style=discord.ButtonStyle.url, emoji="📔")
+
+server = Button(label="Support", 
+                url=supportserver, style=discord.ButtonStyle.url,
+                emoji=Support_icon)
+
+# Knopf, um Claralara einladen zu können!
+invite_claralara = Button(label="Lad' mich ein ^^",
+                      url=bot_invite_url,
+                      style=discord.ButtonStyle.url, emoji="<:Claralara:1462012998578081981>")
+
+GitHub_Repo = Button(label="GitHub Repository", 
+                      url=github_repo_url,
+                      style=discord.ButtonStyle.url, emoji="🐈")
 
 ##################################################################################################################
-# 999.0.0 - GEFAHRENZONE!
+# 999.0.0 - GEFAHRENZONE! / DANGERZONE
 # Hier endet die Config für dich, denn hier beginnt die Logik.
+# Here ends the config for you, because now starts the logic.
+# 
 ##################################################################################################################
-
-# LOGIKBLOCK - Bitte nichts ändern!
 print("\n\n\n==============================================================================")
 print(f"= Claralara | Build: {Majorversion}.{Minorversion}.{Patchversion} ({Buildnummer})                    {datetime.datetime.now().strftime(konsole_date_format)}")
 print("==============================================================================")
-Update = f"Zul. aktualisiert: {Buildtag}.{Buildmonat}.{Buildjahr} - {Buildstunde}:{Buildminute}"
-Beta_aktiviert = [1, "y", "ja", "JA", "yes", "YES"]
-Beta_deaktiviert = [0, "nein", "n", "no"]
-preview_aktiviert = [2, "pre", "preview", "demo"]
-KeinModus = [3, 4, 5, 6, 7, 8, 9, " "]
+Update = f"Last updated: {Buildday}.{Buildmonth}.{Buildyear} - {Buildhour}:{Buildminute}"
+Beta_enabled = [1, "y", "ja", "JA", "yes", "YES"]
+Beta_disabled = [0, "nein", "n", "no"]
+preview_enabled = [2, "pre", "preview", "demo"]
+NoMode = [3, 4, 5, 6, 7, 8, 9, " "]
 
-if Botmodus in Beta_aktiviert: 
+if Botmodus in Beta_enabled: 
     token = "CLARABETA"
     Version = f"{Majorversion}.{Minorversion}.{Patchversion}"
     TextVersion = f"Version {Version} (Beta {Betaversion})"
     EmbedVersion = f"Ver. {Version} (Beta {Betaversion})"
     BotVersion = f"Ver. {Version} (Beta {Betaversion})"
     Build = f"{Buildnummer}"
-    anzahl_feedback = "---"
-    anzahl_top_gg_sterne = "-,- ⭐"
-    anzahl_sterne = "-,- ⭐"
-    anzahl_befehle = "---"
-    anzahl_eastereggs = "---"
-    anzahl_witzen = "---"
-    anzahl_spiele = "---"
-    Sprache = Language
+    count_commands = "---"
+    count_eastereggs = "---"
+    Language = App_Languages
     Cooldown_dauer = 120
 
-    print(f"{datetime.datetime.now().strftime(konsole_date_format)} | SYSTEM\n» Der BETA-MODUS ist aktiviert!\n")
-    Datenbank = {
+    print(f"{datetime.datetime.now().strftime(konsole_date_format)} | SYSTEM\n» The BETA-MODUS is enabled!\n")
+    Database = {
         'host': os.getenv("DBHOST"),
         'port': int(os.getenv("DBPORT")),
         'user': os.getenv("DBUSER"),
         'password': os.getenv("DBPASSWD"),
         'db': os.getenv("DB1"),
         }
-    ZentraleDatenbank = {
+    AdminaDatabase = {
         'host': os.getenv("DBHOST"),
         'port': int(os.getenv("DBPORT")),
         'user': os.getenv("DBUSER"),
@@ -288,31 +305,26 @@ if Botmodus in Beta_aktiviert:
     emote_attention = "<:attention:1302714264422711449>"
     emote_announcement = "<:announcement:1302714247381385316>"
 
-if Botmodus in preview_aktiviert:
+if Botmodus in preview_enabled:
     token = "CLARAALPHA"
     Version = f"{Majorversion}.{Minorversion}.{Patchversion}"
     TextVersion = f"Version {Version} (Pre {previewversion})"
     EmbedVersion = f"Ver. {Version} (Pre {previewversion})"
     BotVersion = f"Ver. {Version} (Pre {previewversion})"
     Build = f"{Buildnummer}"
-    anzahl_feedback = "---"
-    anzahl_top_gg_sterne = "-,- ⭐"
-    anzahl_sterne = "-,- ⭐"
-    anzahl_befehle = "---"
-    anzahl_eastereggs = "---"
-    anzahl_witzen = "---"
-    anzahl_spiele = "---"
-    Sprache = Language
+    count_commands = "---"
+    count_eastereggs = "---"
+    Language = App_Languages
     Cooldown_dauer = 10
-    print(f"{datetime.datetime.now().strftime(konsole_date_format)} | SYSTEM\n» Der PREVIEW-MODUS ist derzeit aktiviert!\n")
-    Datenbank = {
+    print(f"{datetime.datetime.now().strftime(konsole_date_format)} | SYSTEM\n» The PREVIEW-MODUS is currently enabled!\n")
+    Database = {
         'host': os.getenv("DBDEVHOST"),
         'port': int(os.getenv("DBPORT")),
         'user': os.getenv("DBUSER"),
         'password': os.getenv("DBPASSWD"),
         'db': os.getenv("DB1"),
         }
-    ZentraleDatenbank = {
+    AdminaDatabase = {
         'host': os.getenv("DBDEVHOST"),
         'port': int(os.getenv("DBPORT")),
         'user': os.getenv("DBUSER"),
@@ -368,31 +380,26 @@ if Botmodus in preview_aktiviert:
     emote_attention = "<:attention:1302713557602795620>"
     emote_announcement = "<:announcement:1302713548631310377>"
 
-if Botmodus in Beta_deaktiviert:
+if Botmodus in Beta_disabled:
     token = "CLARA"
     Version = f"{Majorversion}.{Minorversion}.{Patchversion}"
     TextVersion = f"Version {Version}"
     EmbedVersion = f"Version {Version}"
     BotVersion = f"Version {Version}"
     Build = f"{Buildnummer}"
-    anzahl_feedback = "---"
-    anzahl_top_gg_sterne = "---"
-    anzahl_sterne = "---"
-    anzahl_befehle = Befehle
-    anzahl_spiele = Spiele
-    anzahl_eastereggs = Eastereggs
-    anzahl_witzen = Witzen
-    Sprache = Language
+    count_commands = App_Commands
+    count_eastereggs = App_Eastereggs
+    Language = App_Languages
     Cooldown_dauer = 120
-    print(f"{datetime.datetime.now().strftime(konsole_date_format)} | SYSTEM\n» Der BETA-MODUS ist deaktiviert!\n")
-    ZentraleDatenbank = {
+    print(f"{datetime.datetime.now().strftime(konsole_date_format)} | SYSTEM\n» The BETA-MODUS is disabled!\n")
+    AdminaDatabase = {
         'host': os.getenv("DBHOST"),
         'port': int(os.getenv("DBPORT")),
         'user': os.getenv("DBUSER"),
         'password': os.getenv("DBPASSWD"),
         'db': os.getenv("DBHQ"),
         }
-    Datenbank = {
+    Database = {
         'host': os.getenv("DBHOST"),
         'port': int(os.getenv("DBPORT")),
         'user': os.getenv("DBUSER"),
@@ -450,17 +457,17 @@ if Botmodus in Beta_deaktiviert:
 
 
 
-if Botmodus in KeinModus:
-    print(f"{datetime.datetime.now().strftime(konsole_date_format)} | SYSTEM\n» Der Modus {Botmodus} wurde gewählt.\n")
-    print(f"{datetime.datetime.now().strftime(konsole_date_format)} | FEHLER\n» KEIN TOKEN GEFUNDEN!\n")
+if Botmodus in NoMode:
+    print(f"{datetime.datetime.now().strftime(konsole_date_format)} | SYSTEM\n» The mode {Botmodus} was selected.\n")
+    print(f"{datetime.datetime.now().strftime(konsole_date_format)} | ERROR\n» NO TOKEN FOUND!\n")
     print(f"{datetime.datetime.now().strftime(konsole_date_format)} | Clara\n» what the fu--??\n")
-    print(f"{datetime.datetime.now().strftime(konsole_date_format)} | Clara\n» Kann es sein, dass du dumm bist oder sowas??\n")
-    print(f"{datetime.datetime.now().strftime(konsole_date_format)} | SYSTEM\n» Start wird abgebrochen...\n\n\n\n\n\n\n\n\n")
+    print(f"{datetime.datetime.now().strftime(konsole_date_format)} | Clara\n» Can it be that you are stupid or something??\n")
+    print(f"{datetime.datetime.now().strftime(konsole_date_format)} | SYSTEM\n» Start will be cancelled...\n\n\n\n\n\n\n\n\n")
     exit()
 
 # LOGIKBLOCK - ENDE!
 ##################################################################################################################
-print(f"{datetime.datetime.now().strftime(konsole_date_format)} | SYSTEM\n» claralara_config.py wurde erfolgreich geladen.\n")
+print(f"{datetime.datetime.now().strftime(konsole_date_format)} | SYSTEM\n» claralara_config.py is loaded successfully.\n")
 
 
 
