@@ -12,7 +12,7 @@
 
 » Der Tag wurde auf Zeile 158 bei claralara_cmd.py beendet.
 
-# # Version 7.0.0 - Preview 1 (Build: 24093P1) » 13.05.2026
+## Version 7.0.0 - Preview 1 (Build: 24093P1) » 13.05.2026
 - Entscheidung für OpenSource
 - Claralara wird neu entwickelt
 - EzCord wird hinzugefügt.
